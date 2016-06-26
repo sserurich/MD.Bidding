@@ -1,0 +1,10 @@
+C:\Work\MD.Bidding\MD.Bidding.Db\bin\Debug\MD.Bidding.Db.dacpac
+C:\Work\MD.Bidding\MD.Bidding.Db\bin\Debug\MD.Bidding.Db.dll
+C:\Work\MD.Bidding\MD.Bidding.Db\bin\Debug\MD.Bidding.Db.pdb
+C:\Work\MD.Bidding\MD.Bidding.Db\obj\Debug\MD.Bidding.Db.dll
+C:\Work\MD.Bidding\MD.Bidding.Db\obj\Debug\MD.Bidding.Db.pdb
+C:\Work\UniProjects\MD.Bidding\MD.Bidding.Db\bin\Debug\MD.Bidding.Db.dacpac
+C:\Work\UniProjects\MD.Bidding\MD.Bidding.Db\bin\Debug\MD.Bidding.Db.dll
+C:\Work\UniProjects\MD.Bidding\MD.Bidding.Db\bin\Debug\MD.Bidding.Db.pdb
+C:\Work\UniProjects\MD.Bidding\MD.Bidding.Db\obj\Debug\MD.Bidding.Db.dll
+C:\Work\UniProjects\MD.Bidding\MD.Bidding.Db\obj\Debug\MD.Bidding.Db.pdb

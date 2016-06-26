@@ -1,0 +1,50 @@
+<div id="navigation">
+    <div class="profile-picture" ng-controller="NavController">
+        <img src="/media/{{user.UserPhoto.MediaId}}/{{user.UserPhoto.Name}}?width=76&height=100&mode=min" class="img-circle m-b" />
+        <div ng-if="user.UserPhoto == null">
+            <img src="/images/Av.jpg" width="60"  class="img-circle m-b" />
+        </div>
+        <div class="stats-label text-color">
+            <span class="font-extra-bold font-uppercase">{{user.UserName}}</span>
+            <div class="dropdown">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                    <small class="text-muted">{{user.FirstName}} - {{user.LastName}} <b class="caret"></b></small>
+                </a>
+                <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                    <li><a ui-sref="profile">Profile</a></li>
+                    <li class="divider"></li>
+                    <li><a data-toggle="modal" data-target="#logoutModal">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <ul side-navigation class="nav" id="side-menu">
+        <li ui-sref-active="active">          
+            <a href="/UsersAdmin/Index">My Dashboard</a>
+        </li>     
+        <li>
+            <a href="/#/products">My Products</a>
+        </li>
+       
+      
+        <li ui-sref-active="active">
+            <a href="/#/categories"><span class="nav-label">All Categories</span></a>            
+        </li>                  
+
+        <li ui-sref-active="active">            
+            <a href="/#/myproduct/bids"><span class="nav-label">My Bids</span></a>  
+        </li>        
+        <li>
+            <a ui-sref="profile">My Account Information</a>
+        </li>
+
+        <li ng-class="{active: $state.includes('reports')}">
+            <a href="#"><span class="nav-label">Reports</span><span class="fa arrow"></span> </a>
+            <ul class="nav nav-second-level" ng-class="{in: $state.includes('reports')}">
+                <li ui-sref-active="active"><a href="/#/reports">Product Reports</a></li>
+                <!--<li ui-sref-active="active"><a ui-sref="bidsreport">Bid Reports</a></li>-->
+            </ul>
+        </li>  
+              
+    </ul>
+</div>

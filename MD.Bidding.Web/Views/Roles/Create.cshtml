@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="header" ng-include="'/app/views/_common/header.html'"></div>
+
+
+<aside id="menu" ng-include="'/app/views/_common/navigation.html'"></aside>
+
+<div id="wrapper">
+    <div class="content">
+        <div id="page-title">
+            <h4 class="page-header addon">Create Role</h4>
+
+        </div>
+        @Html.ActionLink("List Roles", "Index")
+        <hr />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <div>
+                Role name
+            </div>
+            <p>
+                @Html.TextBox("RoleName")
+            </p>
+            <input type="submit" value="Save" />
+        }
+        </div>
+    </div>

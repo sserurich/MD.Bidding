@@ -1,0 +1,38 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Product]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[Product] (Default Constraint)
+       unnamed constraint on [dbo].[Product] (Default Constraint)
+     Table rebuild
+       [dbo].[Product] (Table)
+
+** Supporting actions
+     Drop
+       [dbo].[FK_dbo_Bid_CategoryId] (Foreign Key)
+       [dbo].[FK_dbo_ProductMedia_ProductId] (Foreign Key)
+       [dbo].[FK_dbo_Product_CreatedBy] (Foreign Key)
+       [dbo].[FK_dbo_Product_UpdatedBy] (Foreign Key)
+       [dbo].[FK_dbo_Product_DeletedBy] (Foreign Key)
+       [dbo].[FK_dbo_Product_CategoryId] (Foreign Key)
+       [dbo].[FK_dbo_Product_MediaId] (Foreign Key)
+     Create
+       [dbo].[FK_dbo_Bid_CategoryId] (Foreign Key)
+       [dbo].[FK_dbo_ProductMedia_ProductId] (Foreign Key)
+       [dbo].[FK_dbo_Product_CreatedBy] (Foreign Key)
+       [dbo].[FK_dbo_Product_UpdatedBy] (Foreign Key)
+       [dbo].[FK_dbo_Product_DeletedBy] (Foreign Key)
+       [dbo].[FK_dbo_Product_CategoryId] (Foreign Key)
+       [dbo].[FK_dbo_Product_MediaId] (Foreign Key)
+
+The object [MD.Bidding] exists in the target, but it will not be dropped even though you selected the 'Generate drop statements for objects that are in the target database but that are not in the source' check box.
+The object [MD.Bidding_log] exists in the target, but it will not be dropped even though you selected the 'Generate drop statements for objects that are in the target database but that are not in the source' check box.
+

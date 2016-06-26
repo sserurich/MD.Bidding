@@ -1,0 +1,10 @@
+C:\Work\UniProjects\MD.Bidding\MD.Bidding.Library\bin\Debug\MD.Bidding.Library.dll
+C:\Work\UniProjects\MD.Bidding\MD.Bidding.Library\bin\Debug\MD.Bidding.Library.pdb
+C:\Work\UniProjects\MD.Bidding\MD.Bidding.Library\obj\Debug\MD.Bidding.Library.dll
+C:\Work\UniProjects\MD.Bidding\MD.Bidding.Library\obj\Debug\MD.Bidding.Library.pdb
+C:\Work\MD.Bidding\MD.Bidding.Library\bin\Debug\MD.Bidding.Library.dll
+C:\Work\MD.Bidding\MD.Bidding.Library\bin\Debug\MD.Bidding.Library.pdb
+C:\Work\MD.Bidding\MD.Bidding.Library\obj\Debug\MD.Bidding.Library.csprojResolveAssemblyReference.cache
+C:\Work\MD.Bidding\MD.Bidding.Library\obj\Debug\MD.Bidding.Library.dll
+C:\Work\MD.Bidding\MD.Bidding.Library\obj\Debug\MD.Bidding.Library.pdb
+C:\Work\UniProjects\MD.Bidding\MD.Bidding.Library\obj\Debug\MD.Bidding.Library.csprojResolveAssemblyReference.cache

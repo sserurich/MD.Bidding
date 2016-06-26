@@ -1,0 +1,122 @@
+﻿
+<div id="header" ng-include="'/app/views/_common/header.html'"></div>
+
+<aside id="menu" ng-include="'/app/views/_common/navigation.html'"></aside>
+
+<div id="wrapper">
+
+    <div ng-include="'/app/views/_common/breadcrumb.html'"></div>
+
+    <div class="content">
+
+        <div class="row" ng-controller="MyProductController">
+            <div class="col-md-12">
+
+                <div class="hpanel">
+                    <div class="panel-heading">
+
+                    </div>
+                    <div class="panel-body">
+                        <a ui-sref="product-edit({ action: 'create', productId: 0, mediaFolderId: 0})" class="btn btn-danger btn-sm"><i class="fa fa-plus"></i> ADD product</a>
+                        <div class="searchbox col-md-6 searchCustom pull-right">
+                            <div class="input-append">
+                                <input id="search-fld" placeholder="Search..." type="text" name="param" ng-model="filter.$" class="col-md-10">
+                                <span class="">
+                                    <button class="text-muted" type="button"><i class="fa fa-search"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="clear10"></div>
+
+                        <!--<div class="no-results" ng-if="!data.length">
+                        <p>There is currently no products</p>
+                    </div>-->
+
+                        <div class="table-responsive">
+                            <div ng-hide="!data.length" ng-loading-container="tableParams.settings().$loading">
+                                <table ng-table="tableParams" ng-show-filter="true" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="sortable" ng-class="{
+                                                'sort-asc': tableParams.isSortBy('ProductId', 'asc'),
+                                                'sort-desc': tableParams.isSortBy('ProductId', 'desc')
+                                                }"
+                                                ng-click="tableParams.sorting({'ProductId' : tableParams.isSortBy('ProductId', 'asc') ? 'desc' : 'asc'})" rowspan="2">
+                                                <div>Id</div>
+                                            </th>
+
+                                            <th class="sortable" ng-class="{
+                                                'sort-asc': tableParams.isSortBy('Name', 'asc'),
+                                                'sort-desc': tableParams.isSortBy('Name', 'desc')
+                                                }"
+                                                ng-click="tableParams.sorting({'Name' : tableParams.isSortBy('Name', 'asc') ? 'desc' : 'asc'})" rowspan="2">
+                                                <div>Name</div>
+                                            </th>
+
+                                            <th class="sortable" ng-class="{
+                                                'sort-asc': tableParams.isSortBy('MinimumPrice', 'asc'),
+                                                'sort-desc': tableParams.isSortBy('MinimumPrice', 'desc')
+                                                }"
+                                                ng-click="tableParams.sorting({'MinimumPrice' : tableParams.isSortBy('MinimumPrice', 'asc') ? 'desc' : 'asc'})" rowspan="2">
+                                                <div>Minimum Price</div>
+                                            </th>
+
+                                            <th class="sortable" ng-class="{
+                                                'sort-asc': tableParams.isSortBy('CategoryName', 'asc'),
+                                                'sort-desc': tableParams.isSortBy('CategoryName', 'desc')
+                                                }"
+                                                ng-click="tableParams.sorting({'CategoryName' : tableParams.isSortBy('CategoryName', 'asc') ? 'desc' : 'asc'})" rowspan="2">
+                                                <div>Category Name</div>
+                                            </th>
+
+                                            <th class="sortable" ng-class="{
+                                                'sort-asc': tableParams.isSortBy('CreatedOn', 'asc'),
+                                                'sort-desc': tableParams.isSortBy('CreatedOn', 'desc')
+                                                }"
+                                                ng-click="tableParams.sorting({'CreatedOn' : tableParams.isSortBy('CreatedOn', 'asc') ? 'desc' : 'asc'})" rowspan="2">
+                                                <div>Created on</div>
+                                            </th>
+                                            <th class="sortable" ng-class="{
+                                                'sort-asc': tableParams.isSortBy('BiddingPeriodEndsOn', 'asc'),
+                                                'sort-desc': tableParams.isSortBy('BiddingPeriodEndsOn', 'desc')
+                                                }"
+                                                ng-click="tableParams.sorting({'BiddingPeriodEndsOn' : tableParams.isSortBy('BiddingPeriodEndsOn', 'asc') ? 'desc' : 'asc'})" rowspan="2">
+                                                <div>Bidding Period Ends On</div>
+                                            </th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="product in $data">
+                                            <td width="5%">{{product.ProductId}}</td>
+                                            <td width="20%"><a ui-sref="product-edit({ action: 'edit', productId: product.ProductId, mediaFolderId: product.MediaFolderId })">{{product.Name}}</a></td>
+                                            <td width="15%"><a ui-sref="product-edit({ action: 'edit', productId: product.ProductId, mediaFolderId: product.MediaFolderId })">{{product.MinimumPrice}}</a></td>
+                                            <td width="20%"><a ui-sref="product-edit({ action: 'edit', productId: product.ProductId , mediaFolderId: product.MediaFolderId})">{{product.CategoryName}}</a></td>
+                                            <td width="17%">{{ product.CreatedOn | date:"yyyy-MM-dd hh:mm" }}</td>
+                                            <td width="23%">{{ product.BiddingPeriodEndsOn | date:"yyyy-MM-dd hh:mm" }}</td>
+                                            <td width="5%">
+
+                                                <div class="btn-group">
+                                                    <button data-toggle="dropdown" class="btn btn-default btn-sm dropdown-toggle" aria-expanded="false">Action <span class="caret"></span></button>
+                                                    <ul class="dropdown-menu dropdown-menu-right">
+                                                        <li><a ui-sref="product-edit({ action: 'edit', productId: product.ProductId, mediaFolderId: product.MediaFolderId})">Edit</a></li>
+                                                        <li><a ui-sref="product-bid-edit({ action: 'create', productId: product.ProductId, bidId: 0})">Add Bid</a></li>
+
+                                                        <li><a href="#/product/bids/{{product.ProductId}}">View Product Bids</a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+

@@ -1,0 +1,45 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Category]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[Bid].[Description] is being dropped, data loss could occur.
+       The table [dbo].[AspNetUserClaims] is being dropped, data loss could occur.
+       The table [dbo].[AspNetUserLogins] is being dropped, data loss could occur.
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[Category] (Default Constraint)
+       unnamed constraint on [dbo].[Category] (Default Constraint)
+       [dbo].[FK_dbo.AspNetUserClaims_dbo.AspNetUsers_IdentityUser_Id] (Foreign Key)
+       [dbo].[FK_dbo.AspNetUserLogins_dbo.AspNetUsers_IdentityUser_Id] (Foreign Key)
+       [dbo].[AspNetUserClaims] (Table)
+       [dbo].[AspNetUserLogins] (Table)
+     Alter
+       [dbo].[Bid] (Table)
+     Table rebuild
+       [dbo].[Category] (Table)
+     Create
+       [dbo].[FK_dbo_Category_ParentId] (Foreign Key)
+
+** Supporting actions
+     Drop
+       [dbo].[FK_dbo_Category_CreatedBy] (Foreign Key)
+       [dbo].[FK_dbo_Category_UpdatedBy] (Foreign Key)
+       [dbo].[FK_dbo_Category_DeletedBy] (Foreign Key)
+       [dbo].[FK_dbo_Product_CategoryId] (Foreign Key)
+     Create
+       [dbo].[FK_dbo_Category_CreatedBy] (Foreign Key)
+       [dbo].[FK_dbo_Category_UpdatedBy] (Foreign Key)
+       [dbo].[FK_dbo_Category_DeletedBy] (Foreign Key)
+       [dbo].[FK_dbo_Product_CategoryId] (Foreign Key)
+
+The object [MD.Bidding] exists in the target, but it will not be dropped even though you selected the 'Generate drop statements for objects that are in the target database but that are not in the source' check box.
+The object [MD.Bidding_log] exists in the target, but it will not be dropped even though you selected the 'Generate drop statements for objects that are in the target database but that are not in the source' check box.
+The column [dbo].[Bid].[Description] is being dropped, data loss could occur.
+The table [dbo].[AspNetUserClaims] is being dropped, data loss could occur.
+The table [dbo].[AspNetUserLogins] is being dropped, data loss could occur.
+

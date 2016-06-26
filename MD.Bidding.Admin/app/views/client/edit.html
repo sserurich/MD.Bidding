@@ -1,0 +1,188 @@
+﻿<div id="header" ng-include="'/app/views/_common/header.html'"></div>
+
+<aside id="menu" ng-include="'/app/views/_common/navigation.html'"></aside>
+
+<div id="wrapper">
+
+    <div ng-include="'/app/views/_common/breadcrumb.html'"></div>
+
+    <div class="content" ng-controller="ClientEditController">
+
+        <div class="row">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hpanel">
+                        <form name="form" class="form-horizontal ng-pristine ng-valid col-md-12" novalidate unsaved-warning-form>
+                            <tabset>
+                                <tab>
+                                    <tab-heading>
+                                        <i class="fa fa-laptop"></i> Edit Client
+                                    </tab-heading>
+
+                                    <div class="panel-heading">
+
+                                    </div>
+
+                                    <div class="panel-body">
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">First Name</label>
+                                            <div class="col-md-6">
+                                                <input ng-readonly="readOnly" name="name" class="form-control" ng-model="client.FirstName" required ng-class="{ errorinput: form.name.$invalid }" ng-maxlength="50">
+                                                <span ng-show="form.name.$invalid">
+                                                    <span ng-show="form.name.$error.required" class="help-block error"><i class="fa fa-warning"></i>First Name is a required field.</span>
+
+                                                    <span ng-show="form.name.$error.maxlength" class="help-block error"><i class="fa fa-warning"></i> First Name should not exceed 50 characters.</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Last Name</label>
+                                            <div class="col-md-6">
+                                                <input ng-readonly="readOnly" name="lastName" class="form-control" ng-model="client.LastName" required ng-class="{ errorinput: form.lastName.$invalid }" ng-maxlength="50">
+                                                <span ng-show="form.lastName.$invalid">
+                                                    <span ng-show="form.lastName.$error.required" class="help-block error"><i class="fa fa-warning"></i>Last Name is a required field.</span>
+
+                                                    <span ng-show="form.lastName.$error.maxlength" class="help-block error"><i class="fa fa-warning"></i>Last Name should not exceed 50 characters.</span>
+                                                </span>
+                                            </div>
+                                        </div>                                      
+
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Email</label>
+                                            <div class="col-md-6">
+                                                <input ng-readonly="readOnly" name="email" ng-maxlength="50" type="email" class="form-control" ng-model="client.Email" required ng-pattern="/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/" ng-class="{ errorinput: form.email.$invalid }" />
+                                                <span ng-show="form.email.$invalid">
+                                                    <span ng-show="form.email.$error.required" class="help-block error"><i class="fa fa-warning"></i> This is a required field.</span>
+                                                    <span ng-show="form.email.$error.pattern" class="help-block error margin-bottom-00 "><i class="fa fa-warning"></i> Invalid Email Address</span>
+                                                    <span ng-show="form.email.$error.maxlength" class="help-block error"><i class="fa fa-warning"></i>  Email  should not exceed 50 characters.</span>
+                                                </span>
+
+                                            </div>
+                                        </div>
+
+                                                    
+                                       
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <div class="col-md-2">
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="check-element sample-show-hide alert alert-success animate-show" ng-show="showMessageSave" style="clear:both;">
+                                                    <i class="fa-fw fa fa-check"></i>
+                                                    <span>Client has been saved</span>
+                                                </div>                                               
+                                                <div class="check-element sample-show-hide alert alert-success animate-show" ng-show="showMessageDeleted" style="clear:both;">
+                                                    <i class="fa-fw fa fa-check"></i><span>Client has been deleted</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-sm-8 col-sm-offset-2">
+
+                                                <button class="btn btn-default" type="submit" ng-click="Cancel()">
+                                                    Cancel
+                                                </button>
+
+                                                <div class="btn-group">
+                                                    <button ng-click="Save(client)" class="btn btn-info dropdown-toggle" ng-disabled="!form.$valid">
+                                                        Save 
+                                                    </button>
+                                                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                                                        <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">                                                        
+                                                        <li>
+                                                            <a ng-really-message='Are you sure you want to delete this Client' 
+                                                               ng-disabled="!form.$valid" class="btn text-align-left" href="" ng-really-click="Delete(client.ClientId)" data-original-title="Delete">Delete</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </tab>
+
+                                <tab>
+                                    <tab-heading>
+                                        <i class="fa fa-desktop"></i> Properties
+                                    </tab-heading>
+                                    <div class="panel-body">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <span class="font-bold">Id</span>
+                                                        <br />
+                                                        <span class="font-trans">Id of the Client</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="font-normal">{{client.ClientId}}</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="font-bold"> Created By</span>
+                                                        <br />
+                                                        <span class="font-trans">Original Author</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="font-normal">{{client.CreatedBy}} </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="font-bold"> Created</span>
+                                                        <br />
+                                                        <span class="font-trans">Date Time this Client was created</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="font-normal">{{client.CreatedOn|date:"yyyy-MM-dd hh:mm" }}</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="font-bold"> Last Edited By</span>
+                                                        <br />
+                                                        <span class="font-trans">last updated by</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="font-normal">{{client.UpdatedBy}}  </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="font-bold"> Last Edited On </span>
+                                                        <br />
+                                                        <span class="font-trans">Date Time this Client was last edited</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="font-normal">{{client.TimeStamp | date:"yyyy-MM-dd hh:mm"}}</span>
+                                                    </td>
+                                                </tr>                                            
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </tab>
+                            </tabset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

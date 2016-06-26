@@ -1,0 +1,14 @@
+C:\Work\MD.Bidding\MD.Bidding.Models\bin\Debug\MD.Bidding.Models.dll
+C:\Work\MD.Bidding\MD.Bidding.Models\bin\Debug\MD.Bidding.Models.pdb
+C:\Work\MD.Bidding\MD.Bidding.Models\obj\Debug\MD.Bidding.Models.csprojResolveAssemblyReference.cache
+C:\Work\MD.Bidding\MD.Bidding.Models\obj\Debug\MD.Bidding.Models.dll
+C:\Work\MD.Bidding\MD.Bidding.Models\obj\Debug\MD.Bidding.Models.pdb
+C:\Work\MD.Bidding\MD.Bidding.Models\bin\Debug\log4net.dll
+C:\Work\MD.Bidding\MD.Bidding.Models\bin\Debug\log4net.xml
+C:\Work\UniProjects\MD.Bidding\MD.Bidding.Models\bin\Debug\MD.Bidding.Models.dll
+C:\Work\UniProjects\MD.Bidding\MD.Bidding.Models\bin\Debug\MD.Bidding.Models.pdb
+C:\Work\UniProjects\MD.Bidding\MD.Bidding.Models\bin\Debug\log4net.dll
+C:\Work\UniProjects\MD.Bidding\MD.Bidding.Models\bin\Debug\log4net.xml
+C:\Work\UniProjects\MD.Bidding\MD.Bidding.Models\obj\Debug\MD.Bidding.Models.csprojResolveAssemblyReference.cache
+C:\Work\UniProjects\MD.Bidding\MD.Bidding.Models\obj\Debug\MD.Bidding.Models.dll
+C:\Work\UniProjects\MD.Bidding\MD.Bidding.Models\obj\Debug\MD.Bidding.Models.pdb

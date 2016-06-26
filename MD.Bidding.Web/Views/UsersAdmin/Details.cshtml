@@ -1,0 +1,83 @@
+﻿@model  MD.Bidding.Web.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="header" ng-include="'/app/views/_common/header.html'"></div>
+
+
+<aside id="menu" ng-include="'/app/views/_common/navigation.html'"></aside>
+
+<div id="wrapper">
+    <div class="content">
+        
+            <div id="page-title">
+                <h4 class="page-header addon">Account - Details</h4>
+            </div>
+
+            <ol class="breadcrumb">
+                <li><a href="/#/">Dashboard</a></li>
+                <li>Account</li>
+            </ol>
+
+            <div class="clear0"></div>
+            <hr />
+
+
+            <div class="panel panel-default panel-left">
+                <div class="panel-body">
+                    <div class="col-lg-6">
+                        
+                            <table class="table table-bordered table-hover table-striped">
+                                <tr>
+                                    <th width="50%">@Html.DisplayNameFor(model => model.FirstName)</th>
+                                    <td>@Html.DisplayFor(model => model.FirstName)</td>
+                                </tr>
+                                <tr>
+                                    <th width="50%">@Html.DisplayNameFor(model => model.LastName)</th>
+                                    <td>@Html.DisplayFor(model => model.LastName)</td>
+                                </tr>
+                                <tr>
+                                    <th width="50%">@Html.DisplayNameFor(model => model.Email)</th>
+                                    <td>@Html.DisplayFor(model => model.Email)</td>
+                                </tr>
+                                <tr>
+                                    <th width="50%">@Html.DisplayNameFor(model => model.PhoneNumber)</th>
+                                    <td>@Html.DisplayFor(model => model.PhoneNumber)</td>
+                                </tr>
+
+                            </table>
+
+
+                            <h4>List of roles for this user</h4>
+                            @if (ViewBag.RoleNames.Count == 0)
+                            {
+                                <hr />
+                                <p>No roles found for this user.</p>
+                            }
+
+                            <table class="table table-bordered table-hover table-striped">
+
+                                @foreach (var item in ViewBag.RoleNames)
+                                {
+                                    <tr>
+                                        <td>
+                                            @item
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                            <p>
+                                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                                @Html.ActionLink("Back to List", "Index")
+                            </p>
+</div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+

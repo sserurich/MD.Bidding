@@ -1,0 +1,172 @@
+﻿<!-- Header -->
+<div id="header" ng-include="'/app/views/_common/header.html'"></div>
+
+<!-- Navigation -->
+<aside id="menu" ng-include="'/app/views/_common/navigation.html'"></aside>
+
+<!-- Main Wrapper -->
+<div id="wrapper">
+    <div ng-include="'/app/views/_common/breadcrumb.html'"></div>
+
+    <div class="content">
+        <div class="row">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hpanel" ng-controller="CategoryEditController">
+                        <form name="form" class="form-horizontal ng-pristine ng-valid col-md-8" novalidate unsaved-warning-form>
+                            <tabset>
+                                <tab>
+                                    <tab-heading>
+                                        <i class="fa fa-laptop"></i> Edit category
+                                    </tab-heading>
+
+                                    <div class="panel-body">
+                                       
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Name</label>
+                                                <div class="col-md-10">
+                                                    <input ng-readonly="readOnly" name="name" class="form-control" ng-model="category.Name" ng-maxlength="20"  required ng-class="{ errorinput: form.name.$invalid }">
+                                                    <span ng-show="form.name.$invalid">
+                                                        <span ng-show="form.name.$error.required" class="help-block error"><i class="fa fa-warning"></i> This is a required field.</span>
+                                                        
+                                                        <span ng-show="form.name.$error.maxlength" class="help-block error"><i class="fa fa-warning"></i> Name should not exceed 20 characters.</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="hr-line-dashed"></div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Description</label>
+                                                <div class="col-md-10">
+                                                    <textarea name="body" ng-model="category.Description" required ng-class="{ errorinput: form.body.$invalid }" rows="8" class="form-control"></textarea>
+
+                                                    <span ng-show="form.body.$invalid">
+                                                        <span ng-show="form.body.$error.required" class="help-block error"><i class="fa fa-warning"></i> This is a required field.</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="hr-line-dashed"></div>
+                                            <div class="form-group">
+                                                <div class="col-md-2">
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <div class="check-element sample-show-hide alert alert-success animate-show" ng-show="showMessageSave" style="clear:both;">
+                                                        <i class="fa-fw fa fa-check"></i>
+                                                        <span>Category has been saved</span>
+                                                    </div>
+                                                    <div class="check-element sample-show-hide alert alert-success animate-show" ng-show="showMessageDeleted" style="clear:both;">
+                                                        <i class="fa-fw fa fa-check"></i><span>Category has been Deleted</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <div class="col-sm-8 col-sm-offset-2">
+
+                                                    <button class="btn btn-default" type="submit" ng-click="Cancel()">
+                                                        Cancel
+                                                    </button>
+
+                                                    <div class="btn-group">
+                                                        <button ng-click="Save(category)" class="btn btn-info dropdown-toggle" ng-disabled="!form.$valid">
+                                                            Save
+                                                        </button>
+                                                        <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                                                            <span class="caret"></span>
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            
+                                                            <li>
+                                                                <a ng-really-message='Are you sure you want to delete this category' ng-disabled="!form.$valid" class="btn text-align-left" href="" ng-really-click="Delete(category)" data-original-title="Delete">Delete</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        
+                                    </div>
+                                </tab>
+
+                                <tab>
+                                    <tab-heading>
+                                        <i class="fa fa-desktop"></i> Properties
+                                    </tab-heading>
+                                    <div class="panel-body">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <td>
+                                                       
+                                                    </td>
+                                                    <td>
+                                                       
+                                                    </td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>                                               
+                                                <tr>
+                                                    <td>
+                                                        <span class="font-bold">Id</span>
+                                                        <br/>
+                                                        <span class="font-trans">Id of category</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="font-normal">{{category.CategoryId}}</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="font-bold"> Created By</span>
+                                                        <br/>
+                                                        <span class="font-trans">Original Arthur</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="font-normal">{{category.CreatedBy}} </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="font-bold"> Created</span>
+                                                        <br/>
+                                                        <span class="font-trans">Date Time this category was created</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="font-normal">{{category.CreatedOn|date:"yyyy-MM-dd hh:mm" }}</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="font-bold"> Last Edited By</span> 
+                                                        <br/>
+                                                        <span class="font-trans">last updated by</span> 
+                                                    </td>
+                                                    <td>
+                                                        <span class="font-normal">{{category.UpdatedBy}}  </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="font-bold"> Last Edited On </span>
+                                                        <br/>
+                                                        <span class="font-trans">Date Time this category was last edited</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="font-normal">{{category.TimeStamp | date:"yyyy-MM-dd hh:mm"}}</span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>                                       
+                                    </div>
+                                </tab>
+                            </tabset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

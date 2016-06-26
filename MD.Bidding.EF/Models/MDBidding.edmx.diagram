@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b27853507dc44af4ab9c6dd6b866c953" Name="Diagram1" ZoomLevel="57">
+        <EntityTypeShape EntityType="MD.BiddingModel.AspNetRole" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MD.BiddingModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MD.BiddingModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MD.BiddingModel.AspNetUser" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="MD.BiddingModel.Category" Width="1.5" PointX="5.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MD.BiddingModel.Product" Width="2" PointX="7.375" PointY="4.25" IsExpanded="true" />
+        <AssociationConnector Association="MD.BiddingModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_IdentityUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="MD.BiddingModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_IdentityUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="MD.BiddingModel.FK_AspNetUser_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="MD.BiddingModel.FK_AspNetUser_DeletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="MD.BiddingModel.FK_AspNetUser_UpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="MD.BiddingModel.FK_dbo_Category_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="MD.BiddingModel.FK_dbo_Category_DeletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="MD.BiddingModel.FK_dbo_Category_UpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="MD.BiddingModel.FK_dbo_Product_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="MD.BiddingModel.FK_dbo_Product_DeletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="MD.BiddingModel.FK_dbo_Product_UpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="MD.BiddingModel.FK_dbo_Product_CategoryId" ManuallyRouted="false" />
+        <AssociationConnector Association="MD.BiddingModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MD.BiddingModel.Bid" Width="1.5" PointX="9.75" PointY="4.5" />
+        <EntityTypeShape EntityType="MD.BiddingModel.ExtensionType" Width="1.5" PointX="9.625" PointY="0.875" />
+        <EntityTypeShape EntityType="MD.BiddingModel.MediaType" Width="1.5" PointX="7.375" PointY="1" />
+        <AssociationConnector Association="MD.BiddingModel.FK_dbo_Bid_CreatedBy" />
+        <AssociationConnector Association="MD.BiddingModel.FK_dbo_Bid_DeletedBy" />
+        <AssociationConnector Association="MD.BiddingModel.FK_dbo_Bid_UpdatedBy" />
+        <AssociationConnector Association="MD.BiddingModel.FK_dbo_Bid_CategoryId" />
+        <AssociationConnector Association="MD.BiddingModel.Fk_dbo_ExtensionType_MediaTypeId" />
+        <EntityTypeShape EntityType="MD.BiddingModel.Media" Width="1.5" PointX="11.875" PointY="0.75" />
+        <AssociationConnector Association="MD.BiddingModel.FK_Media_ExtensionType" />
+        <AssociationConnector Association="MD.BiddingModel.FK_Media_MediaType" />
+        <AssociationConnector Association="MD.BiddingModel.ProductMedia1" />
+        <AssociationConnector Association="MD.BiddingModel.ProductMedia" />
+        <AssociationConnector Association="MD.BiddingModel.FK_dbo_Product_MediaId" />
+        <AssociationConnector Association="MD.BiddingModel.FK_dbo_Category_ParentId" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

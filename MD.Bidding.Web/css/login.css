@@ -1,0 +1,21 @@
+﻿body {
+    background-color:#EFEFEF;
+}
+form{
+    margin-top:200px;
+    margin-left:200px;
+}
+#box{
+    height:50px;
+}
+#pwd{
+    height:50px;
+    border-color: #EFEFEF;
+}
+#email{
+    height:50px;
+    border-color: #EFEFEF;
+}
+label{
+    font-size:20px;
+}

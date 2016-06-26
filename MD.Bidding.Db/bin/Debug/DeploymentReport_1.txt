@@ -1,0 +1,53 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Category]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[Category] (Default Constraint)
+       unnamed constraint on [dbo].[Category] (Default Constraint)
+     Table rebuild
+       [dbo].[Category] (Table)
+     Create
+       [dbo].[Bid] (Table)
+       [dbo].[ExtensionType] (Table)
+       [dbo].[Media] (Table)
+       [dbo].[MediaType] (Table)
+       [dbo].[ProductMedia] (Table)
+       Default Constraint: unnamed constraint on [dbo].[Bid] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Bid] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Media] (Default Constraint)
+       Default Constraint: unnamed constraint on [dbo].[Media] (Default Constraint)
+       [dbo].[FK_dbo_Bid_CategoryId] (Foreign Key)
+       [dbo].[FK_dbo_Bid_CreatedBy] (Foreign Key)
+       [dbo].[FK_dbo_Bid_UpdatedBy] (Foreign Key)
+       [dbo].[FK_dbo_Bid_DeletedBy] (Foreign Key)
+       [dbo].[Fk_dbo_ExtensionType_MediaTypeId] (Foreign Key)
+       [dbo].[FK_Media_ExtensionType] (Foreign Key)
+       [dbo].[FK_Media_MediaType] (Foreign Key)
+       [dbo].[FK_dbo_ProductMedia_ProductId] (Foreign Key)
+       [dbo].[FK_dbo_ProductMedia_MediaId] (Foreign Key)
+       [dbo].[AspNetUserRole_Create] (Procedure)
+       [dbo].[AspNetUserRole_Purge] (Procedure)
+       [dbo].[Media_GetDescendants] (Procedure)
+       [dbo].[Media_GetPath] (Procedure)
+       [dbo].[Media_GetPathCsvMediaId] (Procedure)
+       [dbo].[Media_SetPath] (Procedure)
+
+** Supporting actions
+     Drop
+       [dbo].[FK_dbo_Category_CreatedBy] (Foreign Key)
+       [dbo].[FK_dbo_Category_UpdatedBy] (Foreign Key)
+       [dbo].[FK_dbo_Category_DeletedBy] (Foreign Key)
+       [dbo].[FK_dbo_Product_CategoryId] (Foreign Key)
+     Create
+       [dbo].[FK_dbo_Category_CreatedBy] (Foreign Key)
+       [dbo].[FK_dbo_Category_UpdatedBy] (Foreign Key)
+       [dbo].[FK_dbo_Category_DeletedBy] (Foreign Key)
+       [dbo].[FK_dbo_Product_CategoryId] (Foreign Key)

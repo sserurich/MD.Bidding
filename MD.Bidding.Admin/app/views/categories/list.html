@@ -1,0 +1,100 @@
+﻿
+<div id="header" ng-include="'/app/views/_common/header.html'"></div>
+
+<aside id="menu" ng-include="'/app/views/_common/navigation.html'"></aside>
+
+<div id="wrapper">
+
+    <div ng-include="'/app/views/_common/breadcrumb.html'"></div>
+
+    <div class="content">
+
+        <div class="row" ng-controller="CategoryController">
+            <div class="col-md-12">
+
+                <div class="hpanel">
+                    <div class="panel-heading">
+
+                    </div>
+                    <div class="panel-body">
+                        <a ui-sref="category-edit({ action: 'create', categoryId: 0})" class="btn btn-danger btn-sm"><i class="fa fa-plus"></i> ADD CATEGORY</a>
+                        <div class="searchbox col-md-6 searchCustom pull-right">
+                            <div class="input-append">
+                                <input id="search-fld" placeholder="Search..." type="text" name="param" ng-model="filter.$" class="col-md-10">
+                                <span class="">
+                                    <button class="text-muted" type="button"><i class="fa fa-search"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="clear10"></div>
+
+                        <div class="no-results" ng-if="data.length ==0">
+                            <p>There is currently no categories</p>
+                        </div>
+
+                        <div class="table-responsive">
+                            <div ng-hide="!data.length" ng-loading-container="tableParams.settings().$loading">
+                                <table ng-table="tableParams" ng-show-filter="true" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="sortable" ng-class="{
+                                                'sort-asc': tableParams.isSortBy('CategoryId', 'asc'),
+                                                'sort-desc': tableParams.isSortBy('CategoryId', 'desc')
+                                                }"
+                                                ng-click="tableParams.sorting({'CategoryId' : tableParams.isSortBy('CategoryId', 'asc') ? 'desc' : 'asc'})" rowspan="2">
+                                                <div>Id</div>
+                                            </th>
+
+                                            <th class="sortable" ng-class="{
+                                                'sort-asc': tableParams.isSortBy('Name', 'asc'),
+                                                'sort-desc': tableParams.isSortBy('Name', 'desc')
+                                                }"
+                                                ng-click="tableParams.sorting({'Name' : tableParams.isSortBy('Name', 'asc') ? 'desc' : 'asc'})" rowspan="2">
+                                                <div>Name</div>
+                                            </th>                                           
+                                            <th class="sortable" ng-class="{
+                                                'sort-asc': tableParams.isSortBy('CreatedOn', 'asc'),
+                                                'sort-desc': tableParams.isSortBy('CreatedOn', 'desc')
+                                                }"
+                                                ng-click="tableParams.sorting({'CreatedOn' : tableParams.isSortBy('CreatedOn', 'asc') ? 'desc' : 'asc'})" rowspan="2">
+                                                <div>Created on</div>
+                                            </th>
+                                            <th class="sortable" ng-class="{
+                                                'sort-asc': tableParams.isSortBy('Timestamp', 'asc'),
+                                                'sort-desc': tableParams.isSortBy('Timestamp', 'desc')
+                                                }"
+                                                ng-click="tableParams.sorting({'Timestamp' : tableParams.isSortBy('Timestamp', 'asc') ? 'desc' : 'asc'})" rowspan="2">
+                                                <div>Updated on</div>
+                                            </th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="category in $data">
+                                            <td width="5%">{{category.CategoryId}}</td>
+                                            <td width="55%"><a ui-sref="category-edit({ action: 'edit', categoryId: category.CategoryId })">{{category.Name}}</a></td>
+                                            <td width="20%">{{ category.CreatedOn | date:"yyyy-MM-dd hh:mm" }}</td>
+                                            <td width="20%">{{ category.TimeStamp | date:"yyyy-MM-dd hh:mm" }}</td>
+                                            <td width="5%">
+
+                                                <div class="btn-group">
+                                                    <button data-toggle="dropdown" class="btn btn-default btn-sm dropdown-toggle" aria-expanded="false">Action <span class="caret"></span></button>
+                                                    <ul class="dropdown-menu dropdown-menu-right">
+                                                        <li><a ui-sref="category-edit({ action: 'edit', categoryId: category.CategoryId })">Edit</a></li>                                                                                                           
+                                                   </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+

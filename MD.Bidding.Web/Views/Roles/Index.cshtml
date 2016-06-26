@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div id="header" ng-include="'/app/views/_common/header.html'"></div>
+
+
+<aside id="menu" ng-include="'/app/views/_common/navigation.html'"></aside>
+
+<div id="wrapper">
+    <div class="content">
+        <div id="page-title">
+            <h4 class="page-header addon">Roles</h4>
+
+        </div>
+        
+
+        <ol class="breadcrumb">
+            <li><a href="/#/">Dashboard</a></li>
+            <li>Roles</li>
+        </ol>
+
+        <div class="clear0"></div>
+        <hr />
+
+        @Html.ActionLink("Create New Role", "Create")
+        <hr />
+        <div>
+            @foreach (var role in Model)
+            {
+                <p>
+                    <strong>@role.Name | </strong>
+                    <span onclick="return confirm('Are you sure to delete?')"><a href="/Roles/Delete?RoleName=@role.Name" class="delLink" style="color:red;">Delete</a></span> |
+                    @Html.ActionLink("Edit", "Edit", new { roleName = @role.Name })
+                </p>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[MediaType]
+(
+	[MediaTypeId] BIGINT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	[MediaType] VARCHAR(255) NOT NULL
+)

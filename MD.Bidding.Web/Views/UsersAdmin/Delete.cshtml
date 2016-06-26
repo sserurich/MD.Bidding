@@ -1,0 +1,68 @@
+﻿@model  MD.Bidding.Web.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="header" ng-include="'/app/views/_common/header.html'"></div>
+
+
+<aside id="menu" ng-include="'/app/views/_common/navigation.html'"></aside>
+
+<div id="wrapper">
+    <div class="content">
+       
+
+            <div id="page-title">
+                <h1 class="page-header addon">Role - Delete</h1>
+            </div>
+
+            <ol class="breadcrumb">
+                <li><a href="/#/">Dashboard</a></li>
+                <li>Account</li>
+            </ol>
+
+            <div class="clear0"></div>
+            <hr />
+
+
+            <div class="panel panel-default panel-left">
+                <div class="panel-body">
+
+                    <h3>Are you sure you want to delete this User?</h3>
+                    <div>
+                        <table class="table table-bordered table-hover table-striped">
+                            <tr>
+                                <td width="50%">@Html.DisplayNameFor(model => model.FirstName)</td>
+                                <td>@Html.DisplayFor(model => model.FirstName)</td>
+                            </tr>
+                            <tr>
+                                <td width="50%">@Html.DisplayNameFor(model => model.LastName)</td>
+                                <td>@Html.DisplayFor(model => model.LastName)</td>
+                            </tr>
+                            <tr>
+                                <td width="50%">@Html.DisplayNameFor(model => model.Email)</td>
+                                <td>@Html.DisplayFor(model => model.Email)</td>
+                            </tr>
+                            <tr>
+                                <td width="50%">@Html.DisplayNameFor(model => model.PhoneNumber)</td>
+                                <td>@Html.DisplayFor(model => model.PhoneNumber)</td>
+                            </tr>
+                        </table>
+
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-actions no-color">
+                                <input type="submit" value="Delete" class="btn btn-default" /> |
+                                @Html.ActionLink("Back to List", "Index")
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>

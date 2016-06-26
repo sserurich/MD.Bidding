@@ -1,0 +1,77 @@
+﻿@using MD.Bidding.Web.Models
+@model MD.Bidding.Web.Models.LoginViewModel
+
+
+@{
+    ViewBag.Title = "Log in";
+    Layout = "/views/shared/_Layout.cshtml";
+}
+
+
+<div class="login-container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="login">
+                <div class="text-center m-b-md">
+                   <img width="100" src="~/images/iabs-logo.png" />                   
+                    <div class="clear5"></div>
+                    <h3>LOGIN TO INTEGRATED AUCTION <br/> &amp; BIDDING SYSTEM</h3>
+                </div>
+                <div class="clear20"></div>
+
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    @Html.ValidationSummary(true)
+                    <div class="form-group">
+                        <div class="col-md-11">
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeHolder = "User name" })
+                            @Html.ValidationMessageFor(m => m.UserName)
+                        </div>
+                    </div>
+                    <div class="clear5"></div>
+                    <div class="form-group">
+                        <div class="col-md-11 ">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeHolder = "Password" })
+                            @Html.ValidationMessageFor(m => m.Password)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-11">
+                            <div class="checkbox">
+                                <input id="RememberMe" name="RememberMe" type="checkbox" value="true" />
+                                @Html.LabelFor(m => m.RememberMe)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear5"></div>
+                    <div class="form-group">
+                        <div class="col-md-11">
+                            <input type="submit" value="Log in" class="btn btn-success btn-block" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-11">
+                            <div class="clear10"></div>
+                            <p>@Html.ActionLink("I don't know my password", "ForgotPassword")</p>
+
+                        </div>
+                    </div>
+
+                }
+                
+              
+               
+
+            </div>
+                </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+ 
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

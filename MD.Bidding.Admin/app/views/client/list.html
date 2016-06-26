@@ -1,0 +1,26 @@
+﻿
+
+<div id="header" ng-include="'/app/views/_common/header.html'"></div>
+
+<aside id="menu" ng-include="'/app/views/_common/navigation.html'"></aside>
+
+<div id="wrapper">
+
+    <div ng-include="'/app/views/_common/breadcrumb.html'"></div>
+
+    <div class="content" ng-controller="ClientController">
+        <a ui-sref="client-edit({ action: 'create', clientId: 0})" class="btn btn-danger btn-sm m-b-xs"><i class="fa fa-plus"></i> Add Client</a>
+        <!--<div class="btn-group">            
+            <button class="btn btn-default btn-sm" ng-click="Delete(client)"><i ng-class="{'text-danger': selectedPapers.length > 0}" class="fa fa-trash-o"></i> Delete</button>
+        </div>-->
+
+        <span ng-if="loadingSpinner" class="loadingSpinner">
+            <img src="/images/loading-bars.svg" width="45" height="45" /> Loading...
+        </span>
+
+        <div class="clear10"></div>
+        <div class="grid" ui-grid="gridData" ui-grid-selection></div>
+
+       
+    </div>
+</div>

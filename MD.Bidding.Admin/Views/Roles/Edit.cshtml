@@ -1,0 +1,36 @@
+﻿@model Microsoft.AspNet.Identity.EntityFramework.IdentityRole
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="header" ng-include="'/app/views/_common/header.html'"></div>
+
+
+<aside id="menu" ng-include="'/app/views/_common/navigation.html'"></aside>
+
+<div id="wrapper">
+    <div class="content">
+        <div id="page-title">
+            <h4 class="page-header addon">Edit Role</h4>
+
+        </div>
+
+        @Html.ActionLink("List Roles", "Index")
+        <hr />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.Id)
+            <div>
+                Role name
+            </div>
+            <p>
+                @Html.TextBoxFor(model => model.Name)
+            </p>
+            <input type="submit" value="Save" />
+        }
+</div>
+    </div>

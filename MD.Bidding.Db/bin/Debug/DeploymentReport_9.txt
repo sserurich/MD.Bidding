@@ -1,0 +1,22 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[AspNetUserClaims] (Table)
+       [dbo].[AspNetUserLogins] (Table)
+       [dbo].[FK_dbo.AspNetUserClaims_dbo.AspNetUsers_IdentityUser_Id] (Foreign Key)
+       [dbo].[FK_dbo.AspNetUserLogins_dbo.AspNetUsers_IdentityUser_Id] (Foreign Key)
+
+** Supporting actions
+
+The object [MD.Bidding] exists in the target, but it will not be dropped even though you selected the 'Generate drop statements for objects that are in the target database but that are not in the source' check box.
+The object [MD.Bidding_log] exists in the target, but it will not be dropped even though you selected the 'Generate drop statements for objects that are in the target database but that are not in the source' check box.
+

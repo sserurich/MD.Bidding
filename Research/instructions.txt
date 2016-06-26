@@ -1,0 +1,36 @@
+System Requirements:
+
+*WAMP Server
+*Web Browser(Any)
+
+----------
+
+How to copy the system file(WAMP Server already installed):
+
+*Go to wamp>www folder and copy the folder(onlinebiddingsystem)
+
+----------
+
+How to import the database tables:
+
+*create a database named biddingsystemdb in phpmyadmin
+*click import and then browse wamp>www>biddingsystem>database select the biddingsystemdb.sql
+
+----------
+----------
+Sample login accounts for member
+----------
+username: frrrr
+password: ffff
+
+username: mr.scarecrow011
+password: (leave it blank, no password)
+----------
+Sample login accounts in administrator
+----------
+username for admin: admin
+password for admin: ff
+
+note: to access the administrator enter this on the url http://localhost/OnlineBiddingSystem/administrator
+
+---end----

@@ -1,0 +1,79 @@
+﻿@model  MD.Bidding.Web.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <ul class="breadcrumb">
+        <li><a href="/">Home</a> <span class="divider">/</span></li>
+        <li class="active">Registration</li>
+    </ul>
+    <h3> Registration</h3>
+    <div class="well">              
+
+
+                @using (Html.BeginForm("Create", "UsersAdmin", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <h4>Create a new account.</h4>
+                    <hr />
+                    @Html.ValidationSummary("", new { @class = "text-error" })
+                    <div class="control-group">
+                        @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                        <div class="controls">
+                            @Html.TextBoxFor(m => m.Email, new { })
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        @Html.LabelFor(m => m.UserName, new { @class = "control-label" })
+                        <div class="controls">
+                            @Html.TextBoxFor(m => m.UserName, new {  })
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        @Html.LabelFor(m => m.FirstName, new { @class = "control-label " })
+                        <div class="controls">
+                            @Html.TextBoxFor(m => m.FirstName, new {  })
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        @Html.LabelFor(m => m.LastName, new { @class = "control-label " })
+                        <div class="controls">
+                            @Html.TextBoxFor(m => m.LastName, new {  })
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        @Html.LabelFor(m => m.PhoneNumber, new { @class = "control-label " })
+                        <div class="controls">
+                            @Html.TextBoxFor(m => m.PhoneNumber, new {  })
+                        </div>
+                    </div>
+
+
+                    <div class="control-group">
+                        @Html.LabelFor(m => m.Password, new { @class = " control-label" })
+                        <div class="controls">
+                            @Html.PasswordFor(m => m.Password, new {  })
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        @Html.LabelFor(m => m.ConfirmPassword, new { @class = " control-label" })
+                        <div class="controls">
+                            @Html.PasswordFor(m => m.ConfirmPassword, new {  })
+                        </div>
+                    </div>                    
+                    <div class="control-group">
+                        <div class="col-md-offset-2 controls">
+                            <input type="submit" class="btn btn-default" value="Create" />
+                        </div>
+                    </div>
+                }
+
+                @section Scripts {
+                    @Scripts.Render("~/bundles/jqueryval")
+                }
+            </div>
+       
+

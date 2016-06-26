@@ -1,0 +1,118 @@
+﻿
+<div id="header" ng-include="'/app/views/_common/header.html'"></div>
+
+<aside id="menu" ng-include="'/app/views/_common/navigation.html'"></aside>
+
+<div id="wrapper">
+
+    <div ng-include="'/app/views/_common/breadcrumb.html'"></div>
+
+    <div class="content">
+
+        <div class="row" ng-controller="ProductBidController">
+            <div class="col-md-12">
+
+                <div class="hpanel">
+                    <div class="panel-heading">
+
+                    </div>
+                    <div class="panel-body">
+                        <!--<a ui-sref="product-bid-edit({ action: 'create', bidId: 0, productId: productId})" class="btn btn-danger btn-sm"><i class="fa fa-plus"></i> ADD Bid</a>-->
+                        <div class="searchbox col-md-6 searchCustom pull-right">
+                            <div class="input-append">
+                                <input id="search-fld" placeholder="Search..." type="text" name="param" ng-model="filter.$" class="col-md-10">
+                                <span class="">
+                                    <button class="text-muted" type="button"><i class="fa fa-search"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="clear10"></div>
+                 
+
+                        <div class="table-responsive">
+                            <div ng-hide="!data.length" ng-loading-container="tableParams.settings().$loading">
+                                <table ng-table="tableParams" ng-show-filter="true" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="sortable" ng-class="{
+                                                'sort-asc': tableParams.isSortBy('BidId', 'asc'),
+                                                'sort-desc': tableParams.isSortBy('BidId', 'desc')
+                                                }"
+                                                ng-click="tableParams.sorting({'BidId' : tableParams.isSortBy('BidId', 'asc') ? 'desc' : 'asc'})" rowspan="2">
+                                                <div>Id</div>
+                                            </th>
+
+                                            <th class="sortable" ng-class="{
+                                                'sort-asc': tableParams.isSortBy('Amount', 'asc'),
+                                                'sort-desc': tableParams.isSortBy('Amount', 'desc')
+                                                }"
+                                                ng-click="tableParams.sorting({'Amount' : tableParams.isSortBy('Amount', 'asc') ? 'desc' : 'asc'})" rowspan="2">
+                                                <div>Amount</div>
+                                            </th>
+
+                                            <th class="sortable" ng-class="{
+                                                'sort-asc': tableParams.isSortBy('Status', 'asc'),
+                                                'sort-desc': tableParams.isSortBy('Status', 'desc')
+                                                }"
+                                                ng-click="tableParams.sorting({'Status' : tableParams.isSortBy('Status', 'asc') ? 'desc' : 'asc'})" rowspan="2">
+                                                <div>Status</div>
+                                            </th>
+
+                                            <th class="sortable" ng-class="{
+                                                'sort-asc': tableParams.isSortBy('CreatedBy', 'asc'),
+                                                'sort-desc': tableParams.isSortBy('CreatedBy', 'desc')
+                                                }"
+                                                ng-click="tableParams.sorting({'CreatedBy' : tableParams.isSortBy('CreatedBy', 'asc') ? 'desc' : 'asc'})" rowspan="2">
+                                                <div>Bidder's Name</div>
+                                            </th>
+
+                                            <th class="sortable" ng-class="{
+                                                'sort-asc': tableParams.isSortBy('BidderPhoneNumber', 'asc'),
+                                                'sort-desc': tableParams.isSortBy('BidderPhoneNumber', 'desc')
+                                                }"
+                                                ng-click="tableParams.sorting({'BidderPhoneNumber' : tableParams.isSortBy('BidderPhoneNumber', 'asc') ? 'desc' : 'asc'})" rowspan="2">
+                                                <div>Bidder's PhoneNumber</div>
+                                            </th>
+
+                                            <th class="sortable" ng-class="{
+                                                'sort-asc': tableParams.isSortBy('CreatedOn', 'asc'),
+                                                'sort-desc': tableParams.isSortBy('CreatedOn', 'desc')
+                                                }"
+                                                ng-click="tableParams.sorting({'CreatedOn' : tableParams.isSortBy('CreatedOn', 'asc') ? 'desc' : 'asc'})" rowspan="2">
+                                                <div>Created on</div>
+                                            </th>
+                                            
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="Bid in $data">
+                                            <td width="5%">{{Bid.BidId}}</td>
+                                            <td width="20%">{{Bid.Amount}}</td>
+                                            <td width="15%">{{Bid.BidStatusName}}</td>
+                                            <td width="20%">{{Bid.CreatedBy}}</td>
+                                            <td width="20%">{{Bid.BidderPhoneNumber}}</td>
+                                            <td width="17%">{{ Bid.CreatedOn | date:"yyyy-MM-dd hh:mm" }}</td>
+                                            <td width="5%">
+
+                                                <div class="btn-group">
+                                                    <button data-toggle="dropdown" class="btn btn-default btn-sm dropdown-toggle" aria-expanded="false">Action <span class="caret"></span></button>
+                                                    <ul class="dropdown-menu dropdown-menu-right">
+                                                        <li><a ui-sref="Bid-edit({ action: 'edit', bidId: Bid.BidId, productId: Bid.ProductId})">Edit</a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
